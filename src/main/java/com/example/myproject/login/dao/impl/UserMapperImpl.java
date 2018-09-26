@@ -3,7 +3,7 @@ package com.example.myproject.login.dao.impl;
 import com.example.myproject.login.dao.UserMapper;
 import com.example.myproject.login.entity.User;
 
-public class UserDaoImpl implements UserMapper {
+public class UserMapperImpl implements UserMapper {
 
 	@Override
 	public User findByUserName(String username) {
