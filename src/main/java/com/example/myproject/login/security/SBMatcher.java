@@ -1,12 +1,7 @@
 package com.example.myproject.login.security;
 
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
 import org.springframework.stereotype.Component;
-
-import com.example.myproject.login.entity.impl.UserImpl;
 
 @Component
 public class SBMatcher extends SimpleCredentialsMatcher {

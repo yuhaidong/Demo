@@ -5,6 +5,12 @@
     <title>403</title>
 </head>
 <body>
-<h3 th:text="${name}">测试test</h3>
+<h3 th:text="${name}"></h3>
+错误信息：<h4 th:text="${msg}"></h4>
+<form action="" method="post">
+    <p>账号：<input type="text" name="username" value="admin"/></p>
+    <p>密码：<input type="text" name="password" value="123456"/></p>
+    <p><input type="submit" value="登录"/></p>
+</form>
 </body>
 </html>

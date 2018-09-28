@@ -4,7 +4,7 @@
  
 	<resultMap id="BaseResultMap" type="com.example.myproject.login.entity.User">
 		<id column="id" jdbcType="VARCHAR" property="id" />
-		<result column="login_name" jdbcType="VARCHAR" property="login_name" />
+		<result column="login_name" jdbcType="VARCHAR" property="loginName" />
 		<result column="password" jdbcType="VARCHAR" property="password" />
 	</resultMap>
  
