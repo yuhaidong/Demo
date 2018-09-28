@@ -23,12 +23,12 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
-	@Override
-	public User updateUser(User user) {
-		
-		User currentUser = userMapper.updateUser(user);
-		
-		return currentUser;
-	}
+//	@Override
+//	public User updateUser(User user) {
+//		
+//		User currentUser = userMapper.updateUser(user);
+//		
+//		return currentUser;
+//	}
 
 }

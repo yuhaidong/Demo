@@ -14,3 +14,7 @@ spring:
     encoding:
       charset: utf-8
       enabled: true
+
+### MyBatis 配置 ##########
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml

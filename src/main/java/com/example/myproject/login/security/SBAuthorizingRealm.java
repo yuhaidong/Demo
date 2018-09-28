@@ -15,14 +15,24 @@ import com.example.myproject.login.service.UserService;
 
 public class SBAuthorizingRealm extends AuthorizingRealm {
 
+	/**
+	 * 执行授权逻辑
+	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection arg0) {
-		// TODO Auto-generated method stub
+		
+		System.out.println("执行授权逻辑");
+		
 		return null;
 	}
 
+	/**
+	 * 执行认证逻辑
+	 */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authToken) throws AuthenticationException {
+		
+		System.out.println("执行认证逻辑");
 		
 		UsernamePasswordToken token = (UsernamePasswordToken) authToken;
 //		FlxoaUser flxoaUser = flxoaUserMng.findByUserName(token.getUsername());

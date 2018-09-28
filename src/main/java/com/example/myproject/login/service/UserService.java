@@ -6,5 +6,5 @@ public interface UserService {
 
 	public User findByUserName(String username);
 	
-	public User updateUser(User user);
+//	public User updateUser(User user);
 }
