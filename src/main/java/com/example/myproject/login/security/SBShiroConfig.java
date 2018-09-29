@@ -1,11 +1,12 @@
 package com.example.myproject.login.security;
 
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.Authenticator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Properties;
+
+import javax.servlet.Filter;
+
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
-import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -13,10 +14,6 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Properties;
 
 @Configuration
 public class SBShiroConfig {
@@ -44,6 +41,12 @@ public class SBShiroConfig {
 		shiroFilterFactoryBean.setLoginUrl("/login");
 		// 登录成功后要跳转的链接
 		shiroFilterFactoryBean.setSuccessUrl("/index");
+
+		// 自定义拦截器
+		Map<String, Filter> filtersMap = new LinkedHashMap<String, Filter>();
+		filtersMap.put("customFormAuthenticationFilter", new CustomFormAuthenticationFilter());
+		shiroFilterFactoryBean.setFilters(filtersMap);
+		filterChainDefinitionMap.put("/**", "customFormAuthenticationFilter");
 
 		//未授权界面;
 		shiroFilterFactoryBean.setUnauthorizedUrl("/403");

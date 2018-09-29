@@ -23,10 +23,6 @@
 
 	//异步调用显示个人信息正确时
 	function callBackSuccess(data) {
-		alert(111);
-		
-		alert(data.login_name);
-		
 		//显示用户姓名
 		$('#displayName').text(data.login_name);
 		//显示备注信息
