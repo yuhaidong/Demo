@@ -46,6 +46,7 @@ public class SBShiroConfig {
 		Map<String, Filter> filtersMap = new LinkedHashMap<String, Filter>();
 		filtersMap.put("customFormAuthenticationFilter", new CustomFormAuthenticationFilter());
 		shiroFilterFactoryBean.setFilters(filtersMap);
+		// 将自定义的拦截器设置进shiro的filterchain中。必须设置！否则filter不会生效！
 		filterChainDefinitionMap.put("/**", "customFormAuthenticationFilter");
 
 		//未授权界面;
